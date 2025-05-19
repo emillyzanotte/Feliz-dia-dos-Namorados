@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #7a1d28;
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  animation: pulse 1.5s infinite;
+  color: #d63a4a;
+  text-shadow: 0 0 10px #ff6f91;
+}
+
+p {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+button {
+  background-color: #d63a4a;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.3em;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(214, 58, 74, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #a22a37;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 10px #ff6f91;
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px #ff3b5c;
+  }
+}
+
+/* Confetti container */
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 9999;
+}
+
+.confetto {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ff6f91;
+  opacity: 0.9;
+  border-radius: 3px;
+  animation: fall 3s linear forwards;
+  will-change: transform;
+}
+
+/* Different colors for confetti */
+.confetto:nth-child(2n) { background-color: #d63a4a; }
+.confetto:nth-child(3n) { background-color: #f48fb1; }
+.confetto:nth-child(4n) { background-color: #ff9a9e; }
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
