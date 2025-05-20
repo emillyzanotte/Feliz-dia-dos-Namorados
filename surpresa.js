@@ -20,6 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
   setInterval(criarCoracao, 300);
 
   botao.addEventListener('click', () => {
-    window.location.href = 'final.html'; // ou qualquer página que queira
+    window.location.href = 'index.html'; // ou qualquer página que queira
   });
 });
