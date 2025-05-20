@@ -1,62 +1,40 @@
 body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #7a1d28;
-  overflow: hidden;
+  background: linear-gradient(to right, #ffdde1, #ee9ca7);
+  color: #6a3a3a;
   text-align: center;
-  padding: 20px;
+  padding: 40px;
+  margin: 0;
+  min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.5em;
-  margin-bottom: 10px;
-  animation: pulse 1.5s infinite;
+  font-size: 3em;
+  margin-bottom: 20px;
   color: #d63a4a;
-  text-shadow: 0 0 10px #ff6f91;
 }
 
 p {
-  font-size: 1.5em;
-  margin-bottom: 30px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-size: 1.3em;
+  margin: 15px 0;
 }
 
 button {
+  font-size: 1.2em;
   background-color: #d63a4a;
   color: white;
+  padding: 12px 25px;
   border: none;
-  padding: 15px 40px;
-  font-size: 1.3em;
-  border-radius: 25px;
+  border-radius: 15px;
   cursor: pointer;
-  box-shadow: 0 6px 15px rgba(214, 58, 74, 0.6);
   transition: background-color 0.3s ease;
+  margin-bottom: 30px;
 }
 
 button:hover {
   background-color: #a22a37;
 }
 
-/* Pulse animation */
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    text-shadow: 0 0 10px #ff6f91;
-  }
-  50% {
-    transform: scale(1.1);
-    text-shadow: 0 0 20px #ff3b5c;
-  }
-}
-
-/* Confetti container */
 #confetti {
   position: fixed;
   top: 0;
@@ -64,22 +42,17 @@ button:hover {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  overflow: visible;
   z-index: 9999;
 }
 
 .confetto {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #ff6f91;
-  opacity: 0.9;
   border-radius: 3px;
+  opacity: 0.9;
   animation: fall 3s linear forwards;
   will-change: transform;
 }
 
-/* Different colors for confetti */
 .confetto:nth-child(2n) { background-color: #d63a4a; }
 .confetto:nth-child(3n) { background-color: #f48fb1; }
 .confetto:nth-child(4n) { background-color: #ff9a9e; }
