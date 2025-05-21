@@ -1,48 +1,31 @@
-const jardim = document.getElementById('jardim');
-const plantarBtn = document.getElementById('plantarBtn');
-const contador = document.getElementById('contador');
-const coracoesCaindo = document.getElementById('coracoesCaindo');
+const input = document.getElementById('palavraInput');
+const continuarBtn = document.getElementById('continuarBtn');
+const confettiContainer = document.getElementById('confetti');
 
-let totalCoracoes = 0;
-
-plantarBtn.addEventListener('click', () => {
-  const coracao = document.createElement('div');
-  coracao.classList.add('coracao');
-  coracao.textContent = '💖'; // emoji visível no jardim
-  coracao.style.transform = 'scale(0)';
-  jardim.appendChild(coracao);
-
-  // animação de scale in
-  setTimeout(() => {
-    coracao.style.transform = 'scale(1)';
-  }, 10);
-
-  totalCoracoes++;
-  contador.textContent = `Corações plantados: ${totalCoracoes}`;
-
-  if (totalCoracoes >= 10) {
-    window.location.href = 'parabens.html';
-  }
+input.addEventListener('input', () => {
+  const palavra = input.value.trim().toLowerCase();
+  continuarBtn.disabled = palavra !== 'amor';
 });
 
-// Função para criar corações caindo
-function criarCoracaoCai() {
-  const coracao = document.createElement('div');
-  coracao.classList.add('coracaoCai');
-  coracao.style.left = Math.random() * window.innerWidth + 'px';
+continuarBtn.addEventListener('click', () => {
+  window.location.href = 'parabens.html';
+});
 
-  const tamanho = 15 + Math.random() * 10;
-  coracao.style.width = `${tamanho}px`;
-  coracao.style.height = `${tamanho * 0.9}px`;
-
-  coracao.style.animationDuration = (4 + Math.random() * 3) + 's';
-
-  coracoesCaindo.appendChild(coracao);
-
-  coracao.addEventListener('animationend', () => {
-    coracao.remove();
+function criarConfete() {
+  const confetto = document.createElement('div');
+  confetto.classList.add('confetto');
+  confetto.style.left = Math.random() * window.innerWidth + 'px';
+  confetto.style.animationDuration = (2 + Math.random() * 2) + 's';
+  const tamanho = 5 + Math.random() * 10;
+  confetto.style.width = `${tamanho}px`;
+  confetto.style.height = `${tamanho}px`;
+  confetto.style.backgroundColor = ['#ff6f91','#d63a4a','#f48fb1','#ff9a9e'][Math.floor(Math.random() * 4)];
+  
+  confettiContainer.appendChild(confetto);
+  
+  confetto.addEventListener('animationend', () => {
+    confetto.remove();
   });
 }
 
-// Cria um coração caindo a cada 300ms
-setInterval(criarCoracaoCai, 300);
+setInterval(criarConfete, 200);

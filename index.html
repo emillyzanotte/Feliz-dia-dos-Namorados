@@ -2,21 +2,26 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jardim Virtual do Amor</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Dia Dos Namorados 🌸</title>
+  <link rel="stylesheet" href="jardim.css" />
 </head>
 <body>
-  <h1>Jardim Virtual do Amor 💖🌸</h1>
-  <p>Clique no botão para plantar um coração no jardim!</p>
-  
-  <button id="plantarBtn">Plantar Coração</button>
-  
-  <div id="jardim"></div>
-  
-  <p id="contador">Corações plantados: 0</p>
+  <h1 class="titulo">Descubra a senha🌼</h1>
 
-  <div id="coracoesCaindo"></div>
+  <div class="input-container">
+    <p>Dica:</p>
+    <input type="text" id="palavraInput" placeholder="Digite aqui..." />
+    <button id="continuarBtn" disabled>Ir para Surpresa 💌</button>
+  </div>
+  
+
+  <div class="bonecos">
+    <div class="boneco menino">🏃‍♂️</div>
+    <div class="boneco menina">🏃‍♀️</div>
+  </div>
+
+  <div id="confetti"></div>
 
   <script src="jardim.js"></script>
 </body>

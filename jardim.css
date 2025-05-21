@@ -1,0 +1,123 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #ffdde1, #ee9ca7);
+  color: #6a3a3a;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+.titulo {
+  font-size: 2.5em;
+  color: #d63a4a;
+  margin-top: 60px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.input-container {
+  margin-top: 40px;
+}
+
+input[type="text"] {
+  font-size: 1.2em;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #d63a4a;
+  width: 250px;
+  margin-bottom: 15px;
+}
+
+button {
+  font-size: 1.1em;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 15px;
+  background-color: #d63a4a;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #a22a37;
+}
+
+.bonecos {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.boneco {
+  font-size: 2.5em;
+  position: absolute;
+}
+
+.boneco.menino {
+  animation: correrEsquerda 10s linear infinite;
+}
+
+.boneco.menina {
+  animation: correrDireita 10s linear infinite;
+}
+
+@keyframes correrEsquerda {
+  0% { left: -10%; }
+  50% { left: 110%; transform: scaleX(1); }
+  51% { transform: scaleX(-1); }
+  100% { left: -10%; transform: scaleX(-1); }
+}
+
+@keyframes correrDireita {
+  0% { right: -10%; }
+  50% { right: 110%; transform: scaleX(-1); }
+  51% { transform: scaleX(1); }
+  100% { right: -10%; transform: scaleX(1); }
+}
+
+/* Confetti */
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.confetto {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  opacity: 0.9;
+  animation: fall 3s linear forwards;
+  will-change: transform;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}

@@ -23,3 +23,71 @@ function criarConfete() {
 }
 
 setInterval(criarConfete, 150);
+
+// Som de comemoração ao carregar a página
+window.addEventListener('load', () => {
+  const audio = document.getElementById('celebrationSound');
+  audio.play().catch(() => {
+    // Usuário não permitiu autoplay
+  });
+
+  digitarMensagem(" clique no ursinho... 🧸");
+});
+
+// Efeito máquina de escrever
+function digitarMensagem(mensagem) {
+  const elemento = document.getElementById("typewriter");
+  let i = 0;
+  const velocidade = 60;
+
+  function digitar() {
+    if (i < mensagem.length) {
+      elemento.innerHTML += mensagem.charAt(i);
+      i++;
+      document.getElementById("mascote-container").addEventListener("click", () => {
+  const frase = frasesUrso[Math.floor(Math.random() * frasesUrso.length)];
+  falaUrso.innerText = frase;
+  falaUrso.style.display = "block";
+
+  // Remover a classe de animação caso esteja aplicada
+  falaUrso.classList.remove("slide-out");
+
+  clearTimeout(falaUrso.timeout);
+  falaUrso.timeout = setTimeout(() => {
+    // Adiciona classe para animar saída
+    falaUrso.classList.add("slide-out");
+
+    // Após a animação terminar, esconde o balão
+    falaUrso.addEventListener("animationend", () => {
+      falaUrso.style.display = "none";
+      falaUrso.classList.remove("slide-out");
+    }, { once: true });
+  }, 4000);
+});
+
+    }
+  }
+
+  digitar();
+}
+
+const falaUrso = document.getElementById("fala-urso");
+const frasesUrso = [
+  "Você é incrível, sabia? 💕",
+  "Obrigada por espalhar amor! 🧸",
+  "Continue sendo essa pessoa linda! 🌟",
+  "Você merece toda felicidade do mundo 💖",
+  "Estou aqui pra te dar um abraço virtual! 🤗"
+];
+
+document.getElementById("mascote-container").addEventListener("click", () => {
+  const frase = frasesUrso[Math.floor(Math.random() * frasesUrso.length)];
+  falaUrso.innerText = frase;
+  falaUrso.style.display = "block";
+
+  clearTimeout(falaUrso.timeout);
+  falaUrso.timeout = setTimeout(() => {
+    falaUrso.style.display = "none";
+  }, 4000);
+});
+

@@ -67,3 +67,88 @@ button:hover {
     opacity: 0;
   }
 }
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+h1 {
+  animation: pulse 2s infinite;
+}
+
+button:hover {
+  animation: bounce 0.5s;
+}
+
+#typewriter {
+  font-size: 1.1em;
+  color: #6a3a3a;
+  margin-top: 10px;
+  min-height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #d63a4a;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#mascote-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+#urso {
+  width: 80px;
+  height: auto;
+  animation: pularUrso 3s ease-in-out infinite;
+}
+
+@keyframes pularUrso {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+#fala-urso {
+  position: absolute;
+  bottom: 100px;
+  right: 90px;
+  background: #fff0f4;
+  border: 2px solid #d63a4a;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 0.95em;
+  color: #6a3a3a;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  max-width: 200px;
+  display: none;
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(150%);
+  }
+}
+
+#fala-urso.slide-out {
+  animation: slideOutRight 0.5s forwards;
+}
+
