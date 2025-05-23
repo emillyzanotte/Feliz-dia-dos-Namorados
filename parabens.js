@@ -75,11 +75,11 @@ const falaUrso = document.getElementById("fala-urso");
 const urso = document.getElementById("urso");
 
 const frasesUrso = [
-  "Você é incrível, sabia? 💕",
-  "Obrigada por cada momento! 🧸",
-  "Eu te amarei hoje, amanhã, e sempre! 🌟",
+  "Você é incrível, sabia?💕",
+  "Obrigada por cada momento!🧸",
+  "Eu te amarei hoje, amanhã, e sempre!🌟",
   "Você merece toda felicidade que esteja ao meu alcançe de te proporcionar 💖",
-  "Eu te amo meu bobinho favorito! 🤗"
+  "Eu te amo meu bobinho favorito!🤗"
 ];
 
 let cliqueContagem = 0;

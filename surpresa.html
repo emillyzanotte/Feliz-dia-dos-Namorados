@@ -11,31 +11,40 @@
   <div class="cortina direita"></div>
 
   <div class="conteudo">
-    <h1>Você merece esse carinho 💕</h1>
-    <p>Mais uma etapa vencida. Veja essas lembranças:</p>
+  <div class="controle-musica">
+    <button id="playPauseBtn" aria-label="Tocar / Pausar música" class="btn-spotify">
+      <svg id="iconPlay" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1db954" viewBox="0 0 24 24">
+        <polygon points="6,4 20,12 6,20"></polygon>
+      </svg>
+      <svg id="iconPause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1db954" viewBox="0 0 24 24" style="display:none;">
+        <rect x="6" y="4" width="4" height="16"></rect>
+        <rect x="14" y="4" width="4" height="16"></rect>
+      </svg>
+    </button>
+    <input type="range" id="progressBar" min="0" value="0" step="1" aria-label="Barra de progresso da música" />
+  </div>
+
+  <h1>Você merece esse carinho 💕</h1>
+  <p>Mais uma etapa vencida. Veja essas lembranças:</p>
+
+  <div class="galeria">...</div>
+
+
+</div>
 
     <div class="galeria">
       <img src="assets/b78bfe1c-1a28-4786-ba71-d33c4edef8ba.jfif" alt="Foto 1" />
       <img src="assets/eeb0604a-f4e4-4814-ae22-a2c766bd74d5.jfif" alt="Foto 2" />
       <img src="assets/f8371339-3814-44b6-81fb-1f20aac66b8e.jfif" alt="Foto 3" />
+      <div class="galeria">
+      <img src="assets/foto-extra1.jpg" alt="Foto 4" />
+      <img src="assets/foto-extra2.jpg" alt="Foto 5" />
+      <img src="assets/foto-extra3.jpg" alt="Foto 6" />
     </div>
 
-    <div class="controle-musica">
-  <button id="playPauseBtn" aria-label="Tocar / Pausar música" class="btn-spotify">
-    <svg id="iconPlay" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1db954" viewBox="0 0 24 24">
-      <polygon points="6,4 20,12 6,20"></polygon>
-    </svg>
-    <svg id="iconPause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1db954" viewBox="0 0 24 24" style="display:none;">
-      <rect x="6" y="4" width="4" height="16"></rect>
-      <rect x="14" y="4" width="4" height="16"></rect>
-    </svg>
-  </button>
- <input type="range" id="progressBar" min="0" value="0" step="1" aria-label="Barra de progresso da música" />
-
-</div>
-
-    <button id="voltarBtn">Voltar</button>
   </div>
+
+  <button id="voltarBtn">Voltar</button>
 
   <div id="coracoesCaindo"></div>
 
@@ -45,12 +54,11 @@
 
   <audio
   id="musica"
-  src="musica/tribodaperiferia-tribo-da-periferia-alma-de-pipa-a6a0a218.mp3"
+  src="musica/Vem Cá.mp3"
   preload="auto"
   autoplay
   loop>
   </audio>
-
 
   <script src="surpresa.js"></script>
 </body>
