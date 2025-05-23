@@ -4,7 +4,7 @@ const confettiContainer = document.getElementById('confetti');
 
 input.addEventListener('input', () => {
   const palavra = input.value.trim().toLowerCase();
-  continuarBtn.disabled = palavra !== 'amor';
+  continuarBtn.disabled = palavra !== 'ficar jogando';
 });
 
 continuarBtn.addEventListener('click', () => {
@@ -29,3 +29,4 @@ function criarConfete() {
 }
 
 setInterval(criarConfete, 200);
+

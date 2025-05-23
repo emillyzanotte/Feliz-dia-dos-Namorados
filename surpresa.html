@@ -20,12 +20,37 @@
       <img src="assets/f8371339-3814-44b6-81fb-1f20aac66b8e.jfif" alt="Foto 3" />
     </div>
 
-    <p>Cada coração caindo é um lembrete do meu amor por você 💖</p>
+    <div class="controle-musica">
+  <button id="playPauseBtn" aria-label="Tocar / Pausar música" class="btn-spotify">
+    <svg id="iconPlay" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1db954" viewBox="0 0 24 24">
+      <polygon points="6,4 20,12 6,20"></polygon>
+    </svg>
+    <svg id="iconPause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1db954" viewBox="0 0 24 24" style="display:none;">
+      <rect x="6" y="4" width="4" height="16"></rect>
+      <rect x="14" y="4" width="4" height="16"></rect>
+    </svg>
+  </button>
+ <input type="range" id="progressBar" min="0" value="0" step="1" aria-label="Barra de progresso da música" />
+
+</div>
 
     <button id="voltarBtn">Voltar</button>
   </div>
 
   <div id="coracoesCaindo"></div>
+
+  <!-- Música -->
+
+  <div id="somAviso" style="display:none; color: #b91d47; margin-top: 10px;"></div>
+
+  <audio
+  id="musica"
+  src="musica/tribodaperiferia-tribo-da-periferia-alma-de-pipa-a6a0a218.mp3"
+  preload="auto"
+  autoplay
+  loop>
+  </audio>
+
 
   <script src="surpresa.js"></script>
 </body>
