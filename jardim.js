@@ -4,7 +4,7 @@ const confettiContainer = document.getElementById('confetti');
 
 input.addEventListener('input', () => {
   const palavra = input.value.trim().toLowerCase();
-  continuarBtn.disabled = palavra !== 'ficar jogando';
+  continuarBtn.disabled = palavra !== 'resposta';
 });
 
 continuarBtn.addEventListener('click', () => {
